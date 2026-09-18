@@ -32,6 +32,7 @@ EXTRACTION_SCHEMA: dict[str, Any] = {
         "may_become_unfit_for_consumption": {"type": ["boolean", "null"]},
         "manufacture_date_exempt": {"type": ["boolean", "null"], "description": "True only when the label clearly identifies a Bidi, incense-stick, or exempt LPG-cylinder case."},
         "is_imported": {"type": ["boolean", "null"]},
+        "ingredients": {"type": ["string", "null"], "description": "Full ingredients list as printed on the label, verbatim."},
         "not_for_retail_sale": {"type": ["boolean", "null"]},
         "industrial_or_institutional_only": {"type": ["boolean", "null"]},
         "fast_food_packed_by_restaurant_or_hotel": {"type": ["boolean", "null"]},
