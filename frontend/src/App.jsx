@@ -36,126 +36,189 @@ const DISPLAY_STATUS = {
 }
 
 const RULE_DETAILS = {
+  // MANDATORY DECLARATIONS
   'MD-01': {
-    title: 'Manufacturer details',
-    requirement:
-      'Manufacturer name and complete postal address should be declared.',
+    title: 'Manufacturer/Packer details',
+    requirement: 'Rule 6(1)(a): Manufacturer or packer name and complete postal address must be visible.',
   },
-
   'MD-02': {
-    title: 'Importer and country of origin',
-    requirement:
-      'For imported products, importer name/address and country of origin should be declared.',
+    title: 'Importer & Origin',
+    requirement: 'Rule 6(1)(a) & (b): For imported goods, the name/address of the importer and the country of origin must be declared.',
   },
-
   'MD-03': {
     title: 'Generic commodity name',
-    requirement:
-      'The common or generic name of the commodity should be declared.',
+    requirement: 'Rule 6(1)(b): The common or generic name of the commodity must be clearly declared.',
   },
-
-    'MD-04': {
-    title: 'Net quantity',
-    requirement:
-      'Net quantity should use a recognized standard unit.',
+  'MD-04': {
+    title: 'Standard Net Quantity',
+    requirement: 'Rule 6(1)(c): Net quantity must be declared in recognized standard units (g, kg, ml, l, m, or count).',
   },
-
   'MD-05': {
-    title: 'Manufacture / packing date',
-    requirement:
-      'Manufacture, pre-pack or import month and year should be declared unless a configured exemption applies.',
+    title: 'Manufacture / Packing date',
+    requirement: 'Rule 6(1)(d): The month and year of manufacture, packing, or import must be clearly stated.',
   },
-
   'MD-06': {
-    title: 'Best-before / use-by date',
-    requirement:
-      'Where applicable, the best-before or use-by date should be declared with month and year.',
+    title: 'Best-before / Use-by date',
+    requirement: 'Rule 6(1)(d) Proviso: For commodities that may become unfit for consumption, the best-before or use-by date is required.',
   },
-
   'MD-07': {
     title: 'MRP declaration',
-    requirement:
-      'The MRP declaration should contain an amount and indicate that it is inclusive of all taxes.',
+    requirement: 'Rule 6(1)(e): Maximum Retail Price (MRP) must be declared and include the phrase "inclusive of all taxes".',
   },
-
   'MD-08': {
     title: 'Consumer-care information',
-    requirement:
-      'Consumer-care name, postal address, phone number and email should be available.',
+    requirement: 'Rule 6(1)(f): Name, address, telephone number, and email of the person/office for consumer complaints must be present.',
   },
-
   'MD-09': {
     title: 'Declaration language',
-    requirement:
-      'English or Hindi in Devanagari should be present in the declaration language.',
+    requirement: 'Rule 9(1): All mandatory declarations must be in Hindi (Devanagari) or English.',
+  },
+  'MD-10': {
+    title: 'Unit Sale Price (USP)',
+    requirement: 'Rule 6(1)(g): Unit Sale Price must be declared on every package (e.g., Rs. per g or Rs. per ml).',
   },
 
+  // VIOLATIONS / FORMATTING
   'VIO-01': {
-    title: 'Count-unit format',
-    requirement:
-      'Configured prohibited count units such as dozen, score or gross should not be used.',
+    title: 'Non-standard count units',
+    requirement: 'Rules prohibit the use of non-standard units like dozen, score, or gross for quantity declarations.',
   },
-
   'VIO-02': {
-    title: 'Quantity unit threshold',
-    requirement:
-      'Where applicable, a larger unit should not be used below the configured quantity threshold.',
+    title: 'Sub-threshold Unit Usage',
+    requirement: 'Quantities less than 1 kg/L/m must be expressed in g/ml/cm to prevent consumer confusion.',
   },
-
   'VIO-03': {
-    title: 'Quantity modifier',
-    requirement:
-      'Potentially misleading quantity modifiers such as minimum, approximately or about should not be present.',
+    title: 'Misleading modifiers',
+    requirement: 'Modifiers like "minimum", "approximately", or "about" are prohibited in net quantity declarations.',
   },
-
-  'EX-02': {
-    title: 'Bulk-package exemption',
-    requirement:
-      'Bulk-package exemption eligibility requires exact configured conditions.',
-  },
-
-  'TYP-01': {
-    title: 'PDP area measurement',
-    requirement:
-      'Physical PDP area requires calibrated package geometry and scale.',
-  },
-
-  'TYP-02': {
-    title: 'Font-height measurement',
-    requirement:
-      'Physical font height requires reliable pixels-per-mm calibration.',
-  },
-
-  'TYP-03': {
-    title: 'Character aspect ratio',
-    requirement:
-      'Character aspect ratio requires dependable character-level evidence.',
-  },
-
-  'TYP-04': {
-    title: 'Color contrast',
-    requirement:
-      'Color contrast requires calibrated image capture and a defined contrast metric.',
-  },
-
-  'TYP-05': {
-    title: 'Clear-space measurement',
-    requirement:
-      'Clear-space measurement requires precise numeral boxes and stable image scale.',
-  },
-
   'VIO-04': {
-    title: 'MRP sticker assessment',
-    requirement:
-      'Determining whether a sticker covers an original printed MRP requires human visual review.',
+    title: 'MRP Sticker Overwriting',
+    requirement: 'Rule 18(2): No person shall alter or mask the MRP printed by the manufacturer by using a sticker.',
+  },
+  'VIO-05': {
+    title: 'Schedule II Standard Sizes',
+    requirement: 'Specific commodities (tea, biscuits, etc.) must be packed in sizes rationalized under Schedule II.',
   },
 
-  'VIO-05': {
-    title: 'Commodity / pack-size assessment',
-    requirement:
-      'Commodity-to-pack-size assessment requires versioned Schedule II configuration data.',
+  // TYPOGRAPHY / PLACEMENT
+  'TYP-01': {
+    title: 'Principal Display Panel (PDP)',
+    requirement: 'Rule 7: Mandatory declarations must be grouped together on the Principal Display Panel.',
   },
+  'TYP-02': {
+    title: 'Numeral Font Height',
+    requirement: 'Schedule I: Numerals in declarations must meet minimum height requirements based on the display area.',
+  },
+  'TYP-03': {
+    title: 'Character Aspect Ratio',
+    requirement: 'Rule 8: Numerals and letters must have a width of at least one-third of their height.',
+  },
+  'TYP-04': {
+    title: 'Legibility & Contrast',
+    requirement: 'Rule 9(2): Declarations must be clearly legible and provide distinct contrast with the background.',
+  },
+  'TYP-05': {
+    title: 'Surrounding Clear Space',
+    requirement: 'Rule 9(3): Net quantity numerals must have adequate clear space to avoid being obscured by other print.',
+  },
+
+  // BANNED INGREDIENTS
+  'BAN-01': {
+    title: 'Banned / prohibited ingredients',
+    requirement: 'FSSAI / FSS Act 2006: Ingredients banned or not permitted for use in food products sold in India (e.g. potassium bromate, argemone oil, metanil yellow, rhodamine B, cyclamate, coumarin, BVO, formaldehyde, borax, and others).',
+  },
+
+  // EXEMPTIONS & SPECIAL CASES
+  'EX-01': {
+    title: 'Large Package Exemption',
+    requirement: 'Rule 3(a): Packages larger than 25kg/25L are exempt (except cement/fertilizer up to 50kg).',
+  },
+  'EX-02': {
+    title: 'Consignment Exemption',
+    requirement: 'Manual verification required for specialized industrial wholesale distributor consignments.',
+  },
+  'EX-03': {
+    title: 'Industrial/Institutional Exemption',
+    requirement: 'Rule 3(b): Packages sold exclusively to industrial or institutional consumers are exempt.',
+  },
+  'EX-04': {
+    title: 'Specialty Exemption',
+    requirement: 'Rule 3(c/d): Exemptions for fast food packed by hotels or drug formulations under DPCO.',
+  },
+};
+
+/* =========================================================
+   BANNED INGREDIENT ALERT
+   Shows a prominent red callout when BAN-01 fires.
+   ========================================================= */
+function BannedIngredientAlert({ findings }) {
+  const ban = (findings || []).find(f => f.rule_id === 'BAN-01')
+  if (!ban) return null
+
+  const isViolation = ban.outcome === 'POSSIBLE_VIOLATION'
+  const isReview = ban.outcome === 'NEEDS_REVIEW'
+  const hits = Array.isArray(ban.observed) ? ban.observed : null
+
+  if (isViolation) {
+    return (
+      <div className="banned-alert banned-alert--fail" role="alert">
+        <div className="banned-alert-header">
+          <span className="banned-alert-icon">⚠</span>
+          <div>
+            <strong>Banned ingredient detected</strong>
+            <span className="banned-alert-rule">BAN-01 · FSSAI / FSS Act 2006</span>
+          </div>
+          <span className="badge fail">Possible violation</span>
+        </div>
+        {hits && (
+          <ul className="banned-alert-list">
+            {hits.map((hit, i) => <li key={i}>{hit}</li>)}
+          </ul>
+        )}
+        <p className="banned-alert-note">
+          The ingredient(s) above are banned or not permitted for use in food products sold in India.
+          Verify the label physically and refer findings to a qualified officer.
+        </p>
+      </div>
+    )
+  }
+
+  if (isReview) {
+    return (
+      <div className="banned-alert banned-alert--review" role="note">
+        <div className="banned-alert-header">
+          <span className="banned-alert-icon">?</span>
+          <div>
+            <strong>Banned ingredients — unverified</strong>
+            <span className="banned-alert-rule">BAN-01 · FSSAI / FSS Act 2006</span>
+          </div>
+          <span className="badge review">Needs review</span>
+        </div>
+        <p className="banned-alert-note">
+          Ingredients list was not readable. Manually verify the label for banned substances under FSSAI / FSS Act 2006.
+        </p>
+      </div>
+    )
+  }
+
+  // PASS
+  return (
+    <div className="banned-alert banned-alert--pass" role="note">
+      <div className="banned-alert-header">
+        <span className="banned-alert-icon">✓</span>
+        <div>
+          <strong>No banned ingredients detected</strong>
+          <span className="banned-alert-rule">BAN-01 · FSSAI / FSS Act 2006</span>
+        </div>
+        <span className="badge pass">Pass</span>
+      </div>
+      <p className="banned-alert-note">
+        No substances from the FSSAI / FSS Act 2006 banned list were found in the ingredients declaration.
+      </p>
+    </div>
+  )
 }
+
 function Badge({ status }) {
   return (
     <span
@@ -385,6 +448,10 @@ function EvidenceView({
     [
       'Country of origin',
       extraction.country_of_origin,
+    ],
+    [
+      'Ingredients',
+      extraction.ingredients,
     ],
   ]
 
@@ -1060,6 +1127,8 @@ setActivePage('inspect')
                     />
                   </div>
 
+                  <BannedIngredientAlert findings={report.findings} />
+
                   <div className="score-grid">
                     <Metric
                       label="Passed"
@@ -1080,12 +1149,21 @@ setActivePage('inspect')
                     />
 
                     <Metric
-                      label="Possible issues"
+                      label="Issues"
                       value={
                         report.counts
                           .POSSIBLE_VIOLATION
                       }
                       type="fail"
+                    />
+
+                    <Metric
+                      label="Exempt"
+                      value={
+                        report.counts
+                          .EXEMPT
+                      }
+                      type="exempt"
                     />
 
                     <Metric
@@ -1111,6 +1189,10 @@ setActivePage('inspect')
                       [
                         'NEEDS_REVIEW',
                         'Review',
+                      ],
+                      [
+                        'EXEMPT',
+                        'Exemptions',
                       ],
                       [
                         'PASS',
@@ -1174,6 +1256,8 @@ setActivePage('inspect')
                               'object'
                                 ? JSON.stringify(
                                     finding.observed,
+                                    null,
+                                    2,
                                   )
                                 : finding.observed}
                             </code>
@@ -1280,6 +1364,7 @@ setActivePage('inspect')
           </div>
 
           <div className="finding-list findings-page-list">
+            <BannedIngredientAlert findings={report.findings} />
 
             {report.findings?.map(
               (finding, index) => {
@@ -1645,6 +1730,18 @@ setActivePage('inspect')
                 </strong>
               </div>
 
+              <div className="declaration-card declaration-card--wide">
+                <span>
+                  Ingredients
+                </span>
+
+                <strong>
+                  {report.extraction
+                    ?.ingredients ||
+                    'Not reliably detected'}
+                </strong>
+              </div>
+
             </div>
           </section>
 
@@ -1654,6 +1751,8 @@ setActivePage('inspect')
             <p className="eyebrow">
               03 / Compliance summary
             </p>
+
+            <BannedIngredientAlert findings={report.findings} />
 
             <div className="score-grid">
 
@@ -1675,12 +1774,20 @@ setActivePage('inspect')
               />
 
               <Metric
-                label="Possible issues"
+                label="Issues"
                 value={
                   report.counts
                     ?.POSSIBLE_VIOLATION
                 }
                 type="fail"
+              />
+
+              <Metric
+                label="Exempt"
+                value={
+                  report.counts?.EXEMPT
+                }
+                type="exempt"
               />
 
               <Metric
@@ -1734,6 +1841,8 @@ setActivePage('inspect')
                         'object'
                           ? JSON.stringify(
                               finding.observed,
+                              null,
+                              2,
                             )
                           : finding.observed}
                       </code>
@@ -1753,10 +1862,10 @@ setActivePage('inspect')
               05 / Evidence
             </p>
 
-            {preview ? (
+            {report.annotated_image_url || preview ? (
               <div className="dossier-image">
                 <img
-                  src={preview}
+                  src={report.annotated_image_url ? `${API_URL}${report.annotated_image_url}` : preview}
                   alt="Inspected package label"
                 />
               </div>
